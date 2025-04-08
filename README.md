@@ -1,51 +1,49 @@
-# Tic Tac Toe Game
+# Tic Tac Toe
 
-This is a simple implementation of the classic Tic Tac Toe game in Python. The game allows two players to take turns marking their spaces on a 3x3 grid until one player wins or the game ends in a draw.
+This is a simple command-line implementation of the classic Tic Tac Toe game written in Python.
+
+## How to Play
+
+1. Run the `main.py` script to start the game.
+2. Players take turns to input their moves by specifying the row and column numbers (0, 1, or 2).
+3. The game ends when one player wins by aligning three of their symbols (X or O) in a row, column, or diagonal, or when the board is full, resulting in a draw.
+
+## Requirements
+
+- Python 3.x
+
+## How to Run
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/YosAwed/CopilotAgentTest.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd CopilotAgentTest
+   ```
+3. Run the game:
+   ```bash
+   python src/main.py
+   ```
 
 ## Project Structure
 
 ```
-tic-tac-toe
-├── src
-│   ├── main.py        # Entry point of the game
-│   ├── game.py        # Game logic and state management
-│   ├── board.py       # Board representation and management
-│   └── utils.py       # Utility functions
-├── tests
-│   ├── test_game.py   # Unit tests for the Game class
-│   ├── test_board.py  # Unit tests for the Board class
-│   └── test_utils.py  # Unit tests for utility functions
-├── requirements.txt    # Project dependencies
-└── README.md           # Project documentation
-```
-
-## How to Run the Game
-
-1. Clone the repository to your local machine.
-2. Navigate to the project directory.
-3. Install the required dependencies using:
-   ```
-   pip install -r requirements.txt
-   ```
-4. Run the game by executing:
-   ```
-   python src/main.py
-   ```
-
-## Features
-
-- Two-player mode
-- Input validation
-- Displays the game board after each move
-- Checks for a winner or a draw
-
-## Testing
-
-To run the tests, ensure you have the necessary testing libraries installed and execute:
-```
-pytest
+CopilotAgentTest/
+├── README.md
+├── requirements.txt
+├── src/
+│   ├── board.py
+│   ├── game.py
+│   ├── main.py
+│   └── utils.py
+└── tests/
+    ├── test_board.py
+    ├── test_game.py
+    └── test_utils.py
 ```
 
 ## License
 
-This project is open-source and available under the MIT License.
+This project is licensed under the MIT License.
