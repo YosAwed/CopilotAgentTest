@@ -1,4 +1,5 @@
 # main.py
+import random
 
 def print_board(board):
     for row in board:
@@ -22,6 +23,12 @@ def check_winner(board):
 def is_full(board):
     return all(cell != " " for row in board for cell in row)
 
+def computer_move(board):
+    # Find all empty cells
+    empty_cells = [(row, col) for row in range(3) for col in range(3) if board[row][col] == " "]
+    if empty_cells:
+        return random.choice(empty_cells)
+
 def main():
     print("Welcome to Tic Tac Toe!")
     board = [[" " for _ in range(3)] for _ in range(3)]
@@ -29,16 +36,22 @@ def main():
 
     while True:
         print_board(board)
-        print(f"Player {current_player}'s turn.")
-        try:
-            row = int(input("Enter row (0, 1, 2): "))
-            col = int(input("Enter column (0, 1, 2): "))
-            if board[row][col] != " ":
-                print("Cell is already taken. Try again.")
+        if current_player == "X":
+            print(f"Player {current_player}'s turn.")
+            try:
+                row = int(input("Enter row (0, 1, 2): "))
+                col = int(input("Enter column (0, 1, 2): "))
+                if board[row][col] != " ":
+                    print("Cell is already taken. Try again.")
+                    continue
+            except (ValueError, IndexError):
+                print("Invalid input. Please enter numbers between 0 and 2.")
                 continue
-        except (ValueError, IndexError):
-            print("Invalid input. Please enter numbers between 0 and 2.")
-            continue
+        else:
+            print("Computer's turn.")
+            move = computer_move(board)
+            if move:
+                row, col = move
 
         board[row][col] = current_player
         winner = check_winner(board)
